@@ -6,13 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "../style/navbarC.module.css";
 
 const commodityLinks = [
-  { label: "Grains & Cereals", href: "/commodities/grains" },
-  { label: "Petroleum Products", href: "/commodities/petroleum" },
-  { label: "Precious Metals", href: "/commodities/precious-metals" },
-  { label: "Coffee & Tea", href: "/commodities/coffee-tea" },
-  { label: "Nickel", href: "/commodities/nickel" },
-  { label: "Tin", href: "/commodities/tin" },
-  { label: "Copper", href: "/commodities/copper" },
+  { label: "Nickel", href: "../pages/nickel" },
+  { label: "Tin", href: "../pages/tinpage" },
 ];
 
 const navLinks = [
@@ -20,7 +15,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   {
     label: "Commodities",
-    href: "/commodities",
+    href: "../pages",
     dropdown: commodityLinks,
   },
   { label: "About Us", href: "/about" },
