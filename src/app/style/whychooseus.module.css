@@ -1,0 +1,235 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Why Choose Us
+   Off-white bg | Navy #0a1428 | Gold #e08d3c
+══════════════════════════════════════════════ */
+
+/* ── Section ───────────────────────────────── */
+.section {
+  background: #f5f4f0;
+  padding: 88px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ambient top-right glow */
+.section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.07) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* ── Header row ────────────────────────────── */
+.headerRow {
+  gap: 1.5rem 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 12px;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+
+.heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #0a1428;
+  margin: 0;
+  line-height: 1.1;
+  /* Gold left border */
+  padding-left: 18px;
+  border-left: 4px solid #e08d3c;
+}
+
+.heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.headerRight {
+  display: flex;
+  align-items: flex-end;
+}
+
+.headerPara {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.97rem;
+  color: #555560;
+  line-height: 1.78;
+  margin: 0;
+  max-width: 520px;
+  /* Left border echo */
+  padding-left: 18px;
+  border-left: 2px solid rgba(224, 141, 60, 0.25);
+}
+
+/* ── Pillar card ───────────────────────────── */
+.pillar {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem 1.8rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(10, 20, 40, 0.06);
+  box-shadow:
+    0 2px 8px rgba(10, 20, 40, 0.05),
+    0 6px 20px rgba(10, 20, 40, 0.04);
+  will-change: transform;
+  /* smooth shadow transition */
+  transition: box-shadow 0.24s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle top-edge gold highlight */
+.pillar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e08d3c, #f5b060, #e08d3c);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pillar:hover::before {
+  opacity: 1;
+}
+
+/* ── Top row: number + icon ────────────────── */
+.pillarTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pillarNumber {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: rgba(224, 141, 60, 0.15);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+/* Icon box */
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid rgba(224, 141, 60, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e08d3c;
+  background: rgba(224, 141, 60, 0.04);
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+.iconWrap svg {
+  width: 20px;
+  height: 20px;
+  stroke: #e08d3c;
+}
+
+/* Gold rule */
+.pillarRule {
+  display: block;
+  width: 36px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #e08d3c, #f5b060);
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+/* ── Text ──────────────────────────────────── */
+.pillarTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0a1428;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.pillarDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.85rem;
+  color: #5a5a65;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 991.98px) {
+  .section {
+    padding: 64px 0 76px;
+  }
+
+  .heading {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+  }
+
+  .headerPara {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding: 48px 0 60px;
+  }
+
+  .pillar {
+    padding: 1.5rem 1.4rem;
+  }
+
+  .pillarNumber {
+    font-size: 2rem;
+  }
+
+  .heading {
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+  }
+}

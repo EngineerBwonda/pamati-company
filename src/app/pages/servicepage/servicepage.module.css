@@ -1,0 +1,754 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Services Page
+   Navy #0a1428 | Gold #e08d3c | Off-white bg
+══════════════════════════════════════════════ */
+
+.page {
+  overflow-x: hidden;
+}
+
+/* ── Shared helpers ────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 12px;
+}
+.eyebrowLight {
+  color: #e08d3c;
+}
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+.sectionHeading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #0a1428;
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+.sectionHeading em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.headingLight {
+  color: #ffffff;
+}
+.headingRule {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #e08d3c, #f5b060);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.bodyText {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.95rem;
+  color: #4a4a52;
+  line-height: 1.78;
+  margin: 0 0 16px;
+}
+.bodyTextLight {
+  color: rgba(255, 255, 255, 0.6);
+}
+.sectionHeader {
+  margin-bottom: 3rem;
+}
+.sectionSubtext {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.95rem;
+  color: #555560;
+  line-height: 1.72;
+  max-width: 560px;
+  margin: 0;
+}
+.subtextLight {
+  color: rgba(255, 255, 255, 0.48);
+}
+.rule {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 25%,
+    #f5b060 50%,
+    #e08d3c 75%,
+    transparent
+  );
+}
+.ruleBottom {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 25%,
+    #f5b060 50%,
+    #e08d3c 75%,
+    transparent
+  );
+}
+
+/* ── Buttons ───────────────────────────────── */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #e08d3c;
+  color: #0a1428;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 13px 26px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  will-change: transform;
+  transition: background 0.2s;
+}
+.btnPrimary:hover {
+  background: #f0a050;
+  color: #0a1428;
+}
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  will-change: transform;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btnOutline:hover {
+  border-color: #e08d3c;
+  color: #e08d3c;
+}
+.btnOutlineLight {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  will-change: transform;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btnOutlineLight:hover {
+  border-color: #e08d3c;
+  color: #e08d3c;
+}
+
+/* ═══════════════════════════════════════════
+   1. HERO
+═══════════════════════════════════════════ */
+.hero {
+  background: #0a1428;
+  position: relative;
+  padding: 100px 0 88px;
+  overflow: hidden;
+}
+.heroOrbL {
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.09) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.heroOrbR {
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.06) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.heroAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 25%,
+    #f5b060 50%,
+    #e08d3c 75%,
+    transparent
+  );
+}
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 36px;
+}
+.breadcrumbLink {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.breadcrumbLink:hover {
+  color: #e08d3c;
+}
+.breadcrumbSep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+}
+.breadcrumbCurrent {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #e08d3c;
+}
+.heroTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1.08;
+  margin: 0 0 20px;
+}
+.heroTitle em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.heroDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+  margin: 0 0 28px;
+  max-width: 480px;
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Service pills in hero */
+.heroPills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.heroPill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(224, 141, 60, 0.18);
+  border-radius: 8px;
+  padding: 14px 18px;
+  text-decoration: none;
+  will-change: transform;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  cursor: pointer;
+}
+.heroPill:hover {
+  background: rgba(224, 141, 60, 0.06);
+}
+.heroPillIcon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: #e08d3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroPillIcon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #e08d3c;
+}
+.heroPillNum {
+  font-family: "Georgia", serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(224, 141, 60, 0.5);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+.heroPillTitle {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0.04em;
+  flex: 1;
+}
+.heroPillArrow {
+  width: 14px;
+  height: 14px;
+  stroke: rgba(224, 141, 60, 0.5);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════
+   2. SERVICE BLOCKS — alternating
+═══════════════════════════════════════════ */
+.servicesSection {
+  display: flex;
+  flex-direction: column;
+}
+.serviceBlock {
+  position: relative;
+  padding: 88px 0;
+}
+.serviceBlockLight {
+  background: #f5f4f0;
+}
+.serviceBlockDark {
+  background: #0a1428;
+}
+
+.serviceImgWrap {
+  position: relative;
+  height: 420px;
+  border-radius: 8px;
+  overflow: visible;
+}
+.serviceImg {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+.serviceImgAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f5b060,
+    #e08d3c,
+    #b8641e
+  );
+  border-radius: 0 0 8px 8px;
+  z-index: 1;
+}
+.serviceImgFrame {
+  position: absolute;
+  inset: 0;
+  border: 2.5px solid rgba(224, 141, 60, 0.28);
+  border-radius: 8px;
+  transform: translate(12px, 12px);
+  pointer-events: none;
+  z-index: -1;
+}
+.serviceImgNum {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  font-family: "Georgia", serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.12);
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+.serviceTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #0a1428;
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+.serviceTitleLight {
+  color: #ffffff;
+}
+
+/* Feature list */
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.88rem;
+  color: #4a4a52;
+  line-height: 1.55;
+}
+.featureItemLight {
+  color: rgba(255, 255, 255, 0.58);
+}
+.featureTick {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 1px solid rgba(224, 141, 60, 0.35);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(224, 141, 60, 0.06);
+  margin-top: 1px;
+}
+.featureTick svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ═══════════════════════════════════════════
+   3. PROCESS
+═══════════════════════════════════════════ */
+.processSection {
+  background: #060e1c;
+  position: relative;
+  padding: 80px 0 88px;
+}
+.processCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(224, 141, 60, 0.16);
+  border-radius: 8px;
+  padding: 1.8rem 1.6rem;
+  height: 100%;
+  position: relative;
+  will-change: transform;
+  transition: border-color 0.22s;
+}
+.processCard:hover {
+  border-color: rgba(224, 141, 60, 0.45);
+}
+.processNum {
+  font-family: "Georgia", serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: rgba(224, 141, 60, 0.18);
+  line-height: 1;
+  display: block;
+  margin-bottom: 14px;
+}
+.processRule {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #e08d3c;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+.processTitle {
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+.processDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.68;
+  margin: 0;
+}
+.processArrow {
+  position: absolute;
+  top: 50%;
+  right: -18px;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: rgba(224, 141, 60, 0.35);
+  pointer-events: none;
+  display: none;
+}
+@media (min-width: 992px) {
+  .processArrow {
+    display: block;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   4. FAQ
+═══════════════════════════════════════════ */
+.faqSection {
+  background: #f5f4f0;
+  padding: 88px 0;
+}
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faqItem {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(10, 20, 40, 0.08);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(10, 20, 40, 0.04);
+  transition: border-color 0.22s;
+}
+.faqItemOpen {
+  border-color: rgba(224, 141, 60, 0.35);
+}
+.faqBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.faqQ {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #0a1428;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  flex: 1;
+}
+.faqChevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #e08d3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+.faqChevron svg {
+  width: 18px;
+  height: 18px;
+  stroke: #e08d3c;
+}
+.faqAnswer {
+  overflow: hidden;
+}
+.faqA {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.88rem;
+  color: #555560;
+  line-height: 1.72;
+  padding: 0 20px 18px;
+  margin: 0;
+  border-top: 1px solid rgba(224, 141, 60, 0.12);
+  padding-top: 14px;
+}
+
+/* ═══════════════════════════════════════════
+   5. CTA
+═══════════════════════════════════════════ */
+.ctaSection {
+  background: #060e1c;
+  position: relative;
+  padding: 88px 0 96px;
+  overflow: hidden;
+}
+.ctaOrbL {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.09) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.ctaOrbR {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.06) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.ctaInner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+.ctaHeading {
+  font-family: "Georgia", serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+.ctaHeading em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.ctaBody {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  margin: 0 0 28px;
+}
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 991.98px) {
+  .hero {
+    padding: 80px 0 70px;
+  }
+  .serviceBlock {
+    padding: 64px 0;
+  }
+  .serviceImgWrap {
+    height: 320px;
+    margin-bottom: 0;
+  }
+  .faqSection,
+  .processSection {
+    padding: 64px 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .heroActions,
+  .ctaActions {
+    flex-direction: column;
+  }
+  .btnPrimary,
+  .btnOutline,
+  .btnOutlineLight {
+    justify-content: center;
+  }
+  .heroPills {
+    gap: 8px;
+  }
+  .serviceImgFrame {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .hero {
+    padding: 70px 0 56px;
+  }
+  .heroTitle {
+    font-size: 1.9rem;
+  }
+  .serviceImgWrap {
+    height: 240px;
+  }
+  .serviceBlock {
+    padding: 52px 0;
+  }
+  .faqSection {
+    padding: 52px 0;
+  }
+  .ctaSection {
+    padding: 60px 0 68px;
+  }
+}

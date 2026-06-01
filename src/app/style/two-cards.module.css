@@ -1,0 +1,285 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Hero Split Section
+   Navy #0a1428 | Gold #e08d3c | Off-white bg
+══════════════════════════════════════════════ */
+
+/* ── Section ───────────────────────────────── */
+.section {
+  background: #f5f4f0;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+/* ── Container / row ───────────────────────── */
+.container {
+  position: relative;
+}
+
+.row {
+  min-height: 520px;
+}
+
+/* ── Left column ───────────────────────────── */
+.leftCol {
+  padding: 48px 56px 48px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 16px;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+
+/* Main title */
+.title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+  font-weight: 900;
+  color: #0a1428;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.titleEm {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  display: block;
+  letter-spacing: 0;
+}
+
+/* Body paragraph */
+.body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.97rem;
+  color: #444450;
+  line-height: 1.78;
+  margin: 0 0 24px;
+  max-width: 480px;
+}
+
+/* Decorative horizontal rule */
+.rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, #e08d3c, #f5b060);
+  border-radius: 2px;
+  margin-bottom: 28px;
+}
+
+/* ── CTA buttons ───────────────────────────── */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e08d3c;
+  color: #0a1428;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 13px 28px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* scale handled by framer-motion */
+  will-change: transform;
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #0a1428;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 26px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid #0a1428;
+  will-change: transform;
+}
+
+/* ── Right column ──────────────────────────── */
+.rightCol {
+  padding: 0;
+  position: relative;
+}
+
+/* Wrapper for positioning the deco frame + image */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+/* Offset gold border frame behind image */
+.frameDeco {
+  position: absolute;
+  inset: 0;
+  border: 3px solid #e08d3c;
+  border-radius: 6px;
+  transform: translate(14px, 14px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Inner image container — clip + overflow */
+.imageInner {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Gold shimmer line at image bottom */
+.imageAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f5b060,
+    #e08d3c,
+    #b8641e
+  );
+  pointer-events: none;
+}
+
+/* ── Floating badge ────────────────────────── */
+.badge {
+  position: absolute;
+  bottom: -20px;
+  left: -24px;
+  background: #0a1428;
+  border: 2px solid rgba(224, 141, 60, 0.4);
+  border-radius: 6px;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  will-change: transform;
+  z-index: 2;
+}
+
+.badgeNum {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #e08d3c;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.badgeLabel {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 120px;
+  line-height: 1.3;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 991.98px) {
+  .section {
+    padding: 56px 0 64px;
+  }
+
+  .leftCol {
+    padding: 0 0 40px;
+    order: 2;
+  }
+
+  .rightCol {
+    order: 1;
+    margin-bottom: 16px;
+  }
+
+  .imageWrap {
+    height: 340px;
+  }
+
+  .badge {
+    bottom: -16px;
+    left: 16px;
+  }
+
+  .title {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .imageWrap {
+    height: 260px;
+  }
+
+  .frameDeco {
+    transform: translate(8px, 8px);
+  }
+
+  .badge {
+    left: 8px;
+    padding: 10px 14px;
+  }
+
+  .badgeNum {
+    font-size: 1.3rem;
+  }
+
+  .btnPrimary,
+  .btnOutline {
+    width: 100%;
+    justify-content: center;
+  }
+}

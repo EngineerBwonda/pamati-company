@@ -1,0 +1,862 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Tin Product Page
+   Navy #0a1428 | Gold #e08d3c | Off-white bg
+   Mirrors nickelPage.module.css structure
+══════════════════════════════════════════════ */
+
+.page {
+  overflow-x: hidden;
+}
+
+/* ── Shared helpers ────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 12px;
+}
+.eyebrowLight {
+  color: #e08d3c;
+}
+.eyebrowGold {
+  color: #e08d3c;
+}
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+.sectionHeading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #0a1428;
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+.sectionHeading em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.sectionHeadingLight {
+  color: #ffffff;
+}
+.headingRule {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #e08d3c, #f5b060);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.bodyText {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.95rem;
+  color: #4a4a52;
+  line-height: 1.78;
+  margin: 0 0 14px;
+}
+.sectionHeader {
+  margin-bottom: 2.8rem;
+}
+.sectionSubtext {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.95rem;
+  color: #555560;
+  line-height: 1.72;
+  max-width: 580px;
+  margin: 0;
+}
+
+/* ── Buttons ───────────────────────────────── */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #e08d3c;
+  color: #0a1428;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 13px 28px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  will-change: transform;
+  transition: background 0.2s;
+}
+.btnPrimary:hover {
+  background: #f0a050;
+  color: #0a1428;
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 26px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  will-change: transform;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btnOutline:hover {
+  border-color: #e08d3c;
+  color: #e08d3c;
+}
+
+.btnOutlineLight {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 26px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  will-change: transform;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btnOutlineLight:hover {
+  border-color: #e08d3c;
+  color: #e08d3c;
+}
+
+/* ── Trust tags ────────────────────────────── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 4px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #444450;
+  background: #fff;
+  border: 1px solid rgba(224, 141, 60, 0.25);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+/* ═══════════════════════════════════════════
+   1. HERO
+═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 92vh;
+  min-height: 600px;
+  max-height: 860px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #0a1428;
+}
+.heroImg {
+  object-fit: cover;
+  object-position: center;
+}
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 14, 28, 0.92) 0%,
+    rgba(6, 14, 28, 0.5) 40%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  z-index: 1;
+}
+.heroAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f5b060,
+    #e08d3c,
+    #b8641e
+  );
+  z-index: 3;
+}
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 72px;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.breadcrumbLink {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.breadcrumbLink:hover {
+  color: #e08d3c;
+}
+.breadcrumbSep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
+}
+.breadcrumbCurrent {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #e08d3c;
+}
+.heroEyebrow {
+  margin-bottom: 14px;
+}
+.heroTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(2rem, 4.8vw, 3.6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1.08;
+  margin: 0 0 18px;
+}
+.heroTitle em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.heroDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.72;
+  max-width: 540px;
+  margin: 0 0 28px;
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.scrollIndicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.4);
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════════
+   2. STATS BAR
+═══════════════════════════════════════════ */
+.statsBar {
+  background: #060e1c;
+  position: relative;
+  padding: 48px 0;
+}
+.statsRule {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 25%,
+    #f5b060 50%,
+    #e08d3c 75%,
+    transparent
+  );
+}
+.statsRuleBottom {
+  top: auto;
+  bottom: 0;
+}
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 2rem;
+  border-right: 1px solid rgba(224, 141, 60, 0.15);
+}
+.statItem:first-child {
+  padding-left: 0;
+}
+.statItem:last-child {
+  border-right: none;
+}
+.statValue {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  font-weight: 900;
+  color: #e08d3c;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.statLabel {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+}
+
+/* ═══════════════════════════════════════════
+   3. INFO SECTION
+═══════════════════════════════════════════ */
+.infoSection {
+  background: #f5f4f0;
+  padding: 88px 0;
+}
+.infoImgWrap {
+  position: relative;
+  height: 480px;
+  border-radius: 8px;
+  overflow: visible;
+}
+.infoImg {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+.infoImgAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f5b060,
+    #e08d3c,
+    #b8641e
+  );
+  border-radius: 0 0 8px 8px;
+  z-index: 1;
+}
+/* Offset frame deco */
+.imgFrame {
+  position: absolute;
+  inset: 0;
+  border: 2.5px solid rgba(224, 141, 60, 0.3);
+  border-radius: 8px;
+  transform: translate(12px, 12px);
+  pointer-events: none;
+  z-index: -1;
+}
+/* Element badge */
+.imgBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #0a1428;
+  border: 1.5px solid rgba(224, 141, 60, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  z-index: 2;
+}
+.imgBadgeIcon {
+  font-family: "Georgia", serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #e08d3c;
+  line-height: 1;
+}
+.imgBadgeTitle {
+  display: block;
+  font-family: "Georgia", serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+.imgBadgeSub {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════════
+   4. PROCESS SECTION
+═══════════════════════════════════════════ */
+.processSection {
+  background: #0a1428;
+  position: relative;
+  padding: 80px 0;
+}
+.processTopRule {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 25%,
+    #f5b060 50%,
+    #e08d3c 75%,
+    transparent
+  );
+}
+.processCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(224, 141, 60, 0.16);
+  border-radius: 8px;
+  padding: 1.8rem 1.6rem;
+  height: 100%;
+  position: relative;
+  will-change: transform;
+  transition: border-color 0.22s;
+}
+.processCard:hover {
+  border-color: rgba(224, 141, 60, 0.45);
+}
+.processNum {
+  font-family: "Georgia", serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: rgba(224, 141, 60, 0.18);
+  line-height: 1;
+  display: block;
+  margin-bottom: 14px;
+}
+.processRule {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #e08d3c;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+.processTitle {
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+.processDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.68;
+  margin: 0;
+}
+/* Connector arrow on right edge */
+.processArrow {
+  position: absolute;
+  top: 50%;
+  right: -18px;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: rgba(224, 141, 60, 0.35);
+  pointer-events: none;
+  display: none;
+}
+@media (min-width: 992px) {
+  .processArrow {
+    display: block;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   5. DEPOSIT TYPES
+═══════════════════════════════════════════ */
+.depositSection {
+  background: #f5f4f0;
+  padding: 88px 0;
+}
+.depositCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.8rem;
+  height: 100%;
+  border: 1px solid rgba(10, 20, 40, 0.06);
+  box-shadow: 0 2px 10px rgba(10, 20, 40, 0.05);
+  will-change: transform;
+  transition: box-shadow 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.depositCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e08d3c, #f5b060);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.depositCard:hover::before {
+  opacity: 1;
+}
+.depositNum {
+  font-family: "Georgia", serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(224, 141, 60, 0.12);
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+}
+.depositTitle {
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0a1428;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+.depositRule {
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: #e08d3c;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+.depositDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.87rem;
+  color: #5a5a65;
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+.depositTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.depositTag {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  background: rgba(224, 141, 60, 0.08);
+  border: 1px solid rgba(224, 141, 60, 0.25);
+  border-radius: 3px;
+  padding: 4px 10px;
+}
+
+/* ═══════════════════════════════════════════
+   6. USE CASES
+═══════════════════════════════════════════ */
+.useCasesSection {
+  background: #0a1428;
+  padding: 88px 0;
+}
+.useCasesSection .sectionHeading {
+  color: #fff;
+}
+.useCasesSection .eyebrow {
+  color: #e08d3c;
+}
+.useCasesSection .sectionSubtext {
+  color: rgba(255, 255, 255, 0.45);
+}
+.useCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(224, 141, 60, 0.15);
+  border-radius: 8px;
+  padding: 1.8rem 1.6rem;
+  height: 100%;
+  will-change: transform;
+  transition:
+    box-shadow 0.22s,
+    border-color 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.useCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e08d3c, #f5b060);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.useCard:hover::before {
+  opacity: 1;
+}
+.useCard:hover {
+  border-color: rgba(224, 141, 60, 0.4);
+}
+.useIcon {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid rgba(224, 141, 60, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(224, 141, 60, 0.06);
+  margin-bottom: 14px;
+  will-change: transform;
+}
+.useIcon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #e08d3c;
+}
+.useRule {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: #e08d3c;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+.useTitle {
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+.useDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.68;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   7. CTA SECTION
+═══════════════════════════════════════════ */
+.ctaSection {
+  background: #060e1c;
+  position: relative;
+  padding: 88px 0 96px;
+  overflow: hidden;
+}
+.ctaTopRule,
+.ctaBottomRule {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 25%,
+    #f5b060 50%,
+    #e08d3c 75%,
+    transparent
+  );
+}
+.ctaTopRule {
+  top: 0;
+}
+.ctaBottomRule {
+  bottom: 0;
+}
+.ctaOrbL {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.09) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.ctaOrbR {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.06) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.ctaInner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+.ctaHeading {
+  font-family: "Georgia", serif;
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+.ctaHeading em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.ctaBody {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  margin: 0 0 28px;
+}
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 991.98px) {
+  .hero {
+    height: 80vh;
+  }
+  .heroContent {
+    padding-bottom: 52px;
+  }
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 0;
+  }
+  .statItem {
+    border-right: none;
+    padding: 0;
+  }
+  .statItem:nth-child(odd) {
+    border-right: 1px solid rgba(224, 141, 60, 0.15);
+    padding-right: 2rem;
+  }
+  .infoImgWrap {
+    height: 360px;
+  }
+  .infoSection,
+  .depositSection,
+  .useCasesSection {
+    padding: 64px 0;
+  }
+  .processSection {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .hero {
+    height: 100svh;
+    min-height: 520px;
+  }
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .statItem:nth-child(odd) {
+    border-right: none;
+    padding-right: 0;
+  }
+  .statItem + .statItem {
+    border-top: 1px solid rgba(224, 141, 60, 0.15);
+    padding-top: 1.8rem;
+  }
+  .heroActions,
+  .ctaActions {
+    flex-direction: column;
+  }
+  .btnPrimary,
+  .btnOutline,
+  .btnOutlineLight {
+    justify-content: center;
+  }
+  .infoImgWrap {
+    height: 280px;
+  }
+  .imgFrame {
+    display: none;
+  }
+}

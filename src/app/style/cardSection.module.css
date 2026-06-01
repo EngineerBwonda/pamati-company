@@ -1,0 +1,273 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   CardsSection.module.css
+   Pamati Investment – Cards Section
+   Theme: white/warm background · navy accents · gold highlights
+───────────────────────────────────────────────────────────────────────────── */
+
+/* ── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --pamati-navy: #0a1428;
+  --pamati-navy-mid: #122040;
+  --pamati-gold: #e08d3c;
+  --pamati-gold-light: #f0b06a;
+  --pamati-white: #ffffff;
+  --pamati-cream: #faf8f4;
+  --pamati-cream-dark: #f0ece4;
+  --pamati-text: #1a2540;
+  --pamati-muted: #6b7694;
+}
+
+/* ── Section Wrapper ───────────────────────────────────────────────────────── */
+.section {
+  background-color: var(--pamati-cream);
+  padding: 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle decorative background pattern */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 92% 10%,
+      rgba(224, 141, 60, 0.07) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 5% 85%,
+      rgba(10, 20, 40, 0.05) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+}
+
+/* ── Header Row ────────────────────────────────────────────────────────────── */
+.headerRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.headerContent {
+  max-width: 520px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pamati-gold);
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 2px;
+  background: var(--pamati-gold);
+}
+
+.heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--pamati-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--pamati-gold);
+}
+
+.subtext {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--pamati-muted);
+  margin: 0;
+}
+
+/* decorative gold vertical line on the right of the header */
+.accentLine {
+  flex-shrink: 0;
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--pamati-gold),
+    transparent
+  );
+  border-radius: 2px;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .accentLine {
+    display: block;
+  }
+}
+
+/* ── Card Grid ─────────────────────────────────────────────────────────────── */
+.cardGrid {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Individual Card ───────────────────────────────────────────────────────── */
+.card {
+  background-color: var(--pamati-white);
+  border: 1px solid rgba(10, 20, 40, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  box-shadow: 0 2px 12px rgba(10, 20, 40, 0.06);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(10, 20, 40, 0.13);
+  border-color: rgba(224, 141, 60, 0.35);
+}
+
+/* ── Card Image ────────────────────────────────────────────────────────────── */
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImg {
+  transform: scale(1.06);
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(10, 20, 40, 0.45) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Card Body ─────────────────────────────────────────────────────────────── */
+.cardBody {
+  padding: 1.4rem 1.4rem 0.75rem;
+  position: relative;
+}
+
+/* gold top-accent bar */
+.cardAccent {
+  width: 2rem;
+  height: 3px;
+  background: var(--pamati-gold);
+  border-radius: 2px;
+  margin-bottom: 0.85rem;
+  transition: width 0.3s ease;
+}
+
+.card:hover .cardAccent {
+  width: 3.5rem;
+}
+
+.cardTitle {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--pamati-navy);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.cardText {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--pamati-muted);
+  margin: 0;
+}
+
+/* ── Card Footer ───────────────────────────────────────────────────────────── */
+.cardFooter {
+  background: transparent;
+  border-top: 1px solid rgba(10, 20, 40, 0.07);
+  padding: 0.85rem 1.4rem;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pamati-navy);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.cardLink:hover {
+  color: var(--pamati-gold);
+  gap: 0.7rem;
+}
+
+.arrow {
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.cardLink:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* ── Responsive tweaks ─────────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+}

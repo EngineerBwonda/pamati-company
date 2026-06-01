@@ -1,0 +1,251 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Stats Bar
+   Navy #0a1428 | Gold #e08d3c | Dark section
+══════════════════════════════════════════════ */
+
+/* ── Section ───────────────────────────────── */
+.section {
+  background: #0a1428;
+  position: relative;
+  padding: 72px 0 80px;
+  overflow: hidden;
+}
+
+/* Ambient radial glows */
+.section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.07) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Gold rules top & bottom */
+.topRule,
+.bottomRule {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 25%,
+    #f5b060 50%,
+    #e08d3c 75%,
+    transparent
+  );
+}
+
+.topRule {
+  top: 0;
+}
+
+.bottomRule {
+  bottom: 0;
+}
+
+/* ── Header ────────────────────────────────── */
+.header {
+  margin-bottom: 3rem;
+  max-width: 520px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 12px;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+
+.heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Stats grid ────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+/* Vertical divider between items */
+.statItem + .statItem {
+  border-left: 1px solid rgba(224, 141, 60, 0.15);
+  padding-left: 2rem;
+}
+
+/* ── Single stat item ──────────────────────── */
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 0 2rem 0 0;
+  position: relative;
+}
+
+/* ── Icon ──────────────────────────────────── */
+.iconWrap {
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(224, 141, 60, 0.35);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: #e08d3c;
+  will-change: transform;
+}
+
+.iconWrap svg {
+  width: 20px;
+  height: 20px;
+  stroke: #e08d3c;
+}
+
+/* ── Animated number ───────────────────────── */
+.statNumber {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  line-height: 1;
+}
+
+.count {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #e08d3c;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.suffix {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 900;
+  color: #e08d3c;
+  line-height: 1;
+}
+
+/* ── Label ─────────────────────────────────── */
+.statLabel {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  margin: 6px 0 0;
+}
+
+/* ── Description ───────────────────────────── */
+.statDesc {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 991.98px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 0;
+  }
+
+  .statItem + .statItem {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* Re-apply left border only on even items in 2-col layout */
+  .statItem:nth-child(even) {
+    border-left: 1px solid rgba(224, 141, 60, 0.15);
+    padding-left: 2rem;
+  }
+
+  .statItem {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding: 52px 0 60px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .statItem:nth-child(even) {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* Horizontal rule between stacked items */
+  .statItem + .statItem {
+    border-top: 1px solid rgba(224, 141, 60, 0.15);
+    padding-top: 2rem;
+  }
+
+  .count {
+    font-size: 2.6rem;
+  }
+}

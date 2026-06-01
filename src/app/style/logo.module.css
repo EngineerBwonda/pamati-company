@@ -1,0 +1,45 @@
+.logoContainer {
+  background-color: #0a1428;
+  padding: 2.5rem 3rem;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.logoContent {
+  max-width: 100%;
+}
+
+.mainText {
+  color: #e08d3c;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 0 0 0.8rem 0;
+  text-transform: uppercase;
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.1;
+}
+
+.tagline {
+  color: #ffffff;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  opacity: 0.95;
+}
+
+.separator {
+  color: #e08d3c;
+  opacity: 0.7;
+  margin: 0 8px;
+}
+
+/* Hover effect (optional) */
+.logoContainer:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}

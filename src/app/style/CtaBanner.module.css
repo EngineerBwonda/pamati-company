@@ -1,0 +1,285 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – CTA Banner
+   Deep navy bg | Gold #e08d3c | White text
+══════════════════════════════════════════════ */
+
+/* ── Section ───────────────────────────────── */
+.section {
+  background: #060e1c;
+  position: relative;
+  padding: 88px 0 96px;
+  overflow: hidden;
+}
+
+/* Gold rules top & bottom */
+.topRule,
+.bottomRule {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e08d3c 20%,
+    #f5b060 50%,
+    #e08d3c 80%,
+    transparent
+  );
+  z-index: 1;
+}
+
+.topRule {
+  top: 0;
+}
+.bottomRule {
+  bottom: 0;
+}
+
+/* ── Ambient orbs ──────────────────────────── */
+.orbTopLeft {
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.1) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.orbBottomRight {
+  position: absolute;
+  bottom: -100px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 141, 60, 0.07) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* ── Row ───────────────────────────────────── */
+.row {
+  position: relative;
+  z-index: 2;
+  gap: 3rem 0;
+}
+
+/* ── Text column ───────────────────────────── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Eyebrow */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 14px;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+
+/* Heading */
+.heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3.8vw, 2.9rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+.heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Body paragraph */
+.body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.78;
+  margin: 0 0 28px;
+  max-width: 500px;
+}
+
+/* ── Trust signal tags ─────────────────────── */
+.signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(224, 141, 60, 0.22);
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+/* ── Button column ─────────────────────────── */
+.btnCol {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 991.98px) {
+  .btnCol {
+    justify-content: flex-start;
+  }
+}
+
+.btnStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Primary button — gold fill */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #e08d3c;
+  color: #060e1c;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 15px 32px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  will-change: transform;
+  transition: background 0.2s ease;
+}
+
+.btnPrimary:hover {
+  background: #f0a050;
+  color: #060e1c;
+}
+
+/* Outline button */
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 14px 32px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  will-change: transform;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btnOutline:hover {
+  border-color: #e08d3c;
+  color: #e08d3c;
+}
+
+/* Phone nudge */
+.nudge {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 4px 0 0;
+  letter-spacing: 0.02em;
+}
+
+.nudgeLink {
+  color: #e08d3c;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+.nudgeLink:hover {
+  color: #f5b060;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 767.98px) {
+  .section {
+    padding: 64px 0 72px;
+  }
+
+  .btnStack {
+    max-width: 100%;
+  }
+
+  .btnPrimary,
+  .btnOutline {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding: 52px 0 60px;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+  }
+
+  .signals {
+    gap: 8px;
+  }
+}

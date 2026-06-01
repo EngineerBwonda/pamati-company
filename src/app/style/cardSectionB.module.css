@@ -1,0 +1,654 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Commodities Section B
+   Navy #0a1428 | Gold #e08d3c | Off-white bg
+   container-fluid | image cards | improved UI
+══════════════════════════════════════════════ */
+
+/* ── Section wrapper ───────────────────────── */
+.section {
+  background: #f0ede6;
+  padding: 80px 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture pattern */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(224, 141, 60, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(10, 20, 40, 0.05) 0%,
+      transparent 45%
+    );
+  pointer-events: none;
+}
+
+/* ── Section header ────────────────────────── */
+.header {
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+/* Top eyebrow */
+.eyebrowTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+
+/* Heading */
+.heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #0a1428;
+  margin: 0 0 14px;
+  line-height: 1.1;
+  /* Gold left border accent */
+  padding-left: 16px;
+  border-left: 4px solid #e08d3c;
+}
+
+/* Subheading */
+.subheading {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.97rem;
+  color: #555560;
+  line-height: 1.75;
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* ── Card shell ────────────────────────────── */
+.card {
+  background: #ffffff;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow:
+    0 2px 8px rgba(10, 20, 40, 0.06),
+    0 8px 24px rgba(10, 20, 40, 0.06);
+  will-change: transform;
+  /* smooth shadow on lift */
+  transition: box-shadow 0.24s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 4px 16px rgba(10, 20, 40, 0.1),
+    0 20px 48px rgba(10, 20, 40, 0.13);
+}
+
+/* ── Image panel ───────────────────────────── */
+.cardImgWrap {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background: #0a1428;
+}
+
+.cardImg {
+  object-fit: cover;
+  object-position: center;
+  /* zoom handled by parent hover via framer-motion */
+  transition: transform 0.5s ease;
+}
+
+/* Zoom image on card hover */
+.card:hover .cardImg {
+  transform: scale(1.06);
+}
+
+/* Dark navy gradient overlay — makes eyebrow readable */
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 14, 28, 0.72) 0%,
+    rgba(6, 14, 28, 0.2) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Eyebrow badge floated over image */
+.imgEyebrow {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0a1428;
+  background: #e08d3c;
+  border-radius: 3px;
+  padding: 4px 10px;
+  line-height: 1;
+}
+
+/* Gold shimmer accent at bottom of image */
+.accentLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f5b060,
+    #e08d3c,
+    #b8641e
+  );
+  z-index: 2;
+}
+
+/* ── Card body ─────────────────────────────── */
+.cardBody {
+  padding: 1.25rem 1.3rem 1.4rem !important;
+  gap: 0;
+  background: #ffffff;
+}
+
+.cardTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0a1428;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.cardText {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.85rem;
+  color: #5a5a65;
+  line-height: 1.68;
+  flex: 1;
+  margin: 0;
+}
+
+/* Thin divider before link */
+.cardBody::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: rgba(224, 141, 60, 0.35);
+  margin-top: 14px;
+}
+
+/* ── CTA link ──────────────────────────────── */
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  text-decoration: none;
+  will-change: transform;
+  transition: color 0.18s ease;
+}
+
+.cardLink:hover {
+  color: #b8641e;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 1199.98px) {
+  .cardImgWrap {
+    height: 190px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section {
+    padding: 56px 0 72px;
+  }
+
+  .cardImgWrap {
+    height: 220px;
+  }
+
+  .heading {
+    font-size: 1.35rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding: 44px 0 60px;
+  }
+
+  .cardImgWrap {
+    height: 200px;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   Pamati Investment – Commodities Section
+   Navy #0a1428 | Gold #e08d3c | White text
+══════════════════════════════════════════════ */
+
+/* ── Section wrapper ───────────────────────── */
+/* .section {
+  background: #f5f4f0;
+}
+
+.header {
+  max-width: 600px;
+}
+
+.heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #0a1428;
+  margin: 0 0 10px;
+  display: inline-block;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #e08d3c;
+}
+
+.subheading {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.96rem;
+  color: #4a4a52;
+  line-height: 1.72;
+  margin: 10px 0 0;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 6px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(10, 20, 40, 0.07);
+  will-change: transform;
+}
+
+.cardImgTop {
+  background: #0a1428;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.iconOrb {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e08d3c 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cardIcon {
+  position: relative;
+  z-index: 1;
+  color: #e08d3c;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.cardIcon svg {
+  width: 46px;
+  height: 46px;
+  stroke: #e08d3c;
+}
+
+.accentLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f5b060,
+    #e08d3c,
+    #b8641e
+  );
+}
+
+.cardBody {
+  padding: 1.1rem 1.15rem 1.3rem !important;
+  gap: 4px;
+}
+
+.eyebrow {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  display: block;
+}
+
+.cardTitle {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0a1428;
+  letter-spacing: 0.02em;
+  margin: 5px 0 0;
+}
+
+.cardText {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.85rem;
+  color: #555560;
+  line-height: 1.66;
+  flex: 1;
+  margin: 7px 0 0;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  text-decoration: none;
+  transition: color 0.18s ease;
+ 
+  will-change: transform;
+}
+
+.cardLink:hover {
+  color: #b8641e;
+}
+
+@media (max-width: 575.98px) {
+  .cardImgTop {
+    height: 110px;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+} */
+
+/* 
+
+give style to the card section, the heading should have a gold accent line on the left and a decorative gold vertical line on the right. The subtext should be in a muted color and have a comfortable line height for readability. The section should have ample padding and spacing between elements to create a clean and organized layout.
+
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   cardSection.module.css
+   Pamati Investment – Services Section
+   Theme: warm cream bg · navy text · gold accents
+───────────────────────────────────────────────────────────────────────────── */
+/* 
+:root {
+  --navy: #0a1428;
+  --navy-mid: #122040;
+  --gold: #e08d3c;
+  --gold-light: #f0b06a;
+  --cream: #faf8f4;
+  --cream-dark: #f0ece4;
+  --white: #ffffff;
+  --text: #1a2540;
+  --muted: #6b7694;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 560px;
+  background-color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 95% 8%,
+      rgba(224, 141, 60, 0.08) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 4% 90%,
+      rgba(10, 20, 40, 0.05) 0%,
+      transparent 38%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem 5rem 5rem;
+  gap: 0; 
+}
+
+.eyebrow {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 2px;
+  background: var(--gold);
+}
+
+.accentLine {
+  height: 2px;
+  width: 100%;
+  max-width: 3rem;
+  background: linear-gradient(to right, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+  transform-origin: left center;
+}
+
+.title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.22;
+  color: var(--navy);
+  margin: 0 0 1.25rem;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0 0 2rem;
+  max-width: 44ch;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.75rem 1.75rem;
+  background-color: var(--gold);
+  color: var(--navy);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 2px solid var(--gold);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    gap 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after {
+  content: "→";
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--gold);
+  gap: 0.75rem;
+}
+
+.button:hover::after {
+  transform: translateX(4px);
+}
+
+.imageWrapper {
+  position: relative;
+  flex: 0 0 50%;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.imageWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 20, 40, 0.18) 0%,
+    transparent 35%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imageWrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  border-radius: 2px;
+  z-index: 2;
+}
+@media (max-width: 1024px) {
+  .content {
+    padding: 4rem 2.5rem 4rem 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .section {
+    flex-direction: column-reverse;
+    min-height: unset;
+  }
+
+  .content {
+    flex: unset;
+    padding: 3rem 1.5rem;
+  }
+
+  .text {
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    flex: unset;
+    width: 100%;
+    min-height: 280px;
+  }
+
+  .imageWrapper::after {
+    display: none;
+  }
+
+  .button {
+    align-self: stretch;
+    justify-content: center;
+  }
+} */

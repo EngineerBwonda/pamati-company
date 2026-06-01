@@ -1,0 +1,280 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Navbar CSS Module
+   Navy #0a1428 | Gold #e08d3c | White text
+   Bootstrap-enhanced
+══════════════════════════════════════════════ */
+
+/* ── Navbar shell ──────────────────────────── */
+.navbar {
+  background: #0a1428;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  min-height: 80px;
+  border-bottom: 2px solid rgba(224, 141, 60, 0.25);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: #060e1c;
+  box-shadow: 0 6px 36px rgba(0, 0, 0, 0.55);
+  border-bottom-color: rgba(224, 141, 60, 0.45);
+}
+
+/* ── Brand mark ────────────────────────────── */
+.brand {
+  text-decoration: none !important;
+  padding: 6px 0;
+}
+
+.brandMark {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brandMain {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #e08d3c;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.brandSub {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.brandSep {
+  color: #e08d3c;
+  opacity: 0.7;
+  margin: 0 6px;
+}
+
+/* Collapsed variant used inside offcanvas */
+.brandMarkCollapsed .brandMain {
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.brandMarkCollapsed .brandSub {
+  font-size: 0.68rem;
+  text-align: center;
+  white-space: normal;
+}
+
+/* ── Desktop nav links ─────────────────────── */
+.navList {
+  gap: 2px;
+}
+
+.navLink {
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.9rem !important;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82) !important;
+  border-radius: 5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    transform 0.2s ease !important;
+}
+
+.navLink:hover {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+.navLink.active {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.12) !important;
+}
+
+/* Animated underline bar — gold */
+.underline {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: calc(100% - 18px);
+  height: 2px;
+  background: #e08d3c;
+  border-radius: 2px;
+  transition: transform 0.22s ease;
+}
+
+.navLink:hover .underline,
+.navLink.active .underline {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ── Custom hamburger ──────────────────────── */
+.toggler {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px !important;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toggler:hover {
+  background: rgba(224, 141, 60, 0.1) !important;
+}
+
+.togglerBar {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #e08d3c;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* ── Backdrop ──────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 14, 28, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1055;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Offcanvas drawer ──────────────────────── */
+.offcanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(300px, 85vw);
+  height: 100dvh;
+  background: #0a1428;
+  border-right: 2px solid rgba(224, 141, 60, 0.4);
+  box-shadow: 10px 0 48px rgba(0, 0, 0, 0.55);
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem 2rem;
+  transform: translateX(-110%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.offcanvasOpen {
+  transform: translateX(0);
+}
+
+/* Close button */
+.closeBtn {
+  background: rgba(224, 141, 60, 0.12);
+  border: 1px solid rgba(224, 141, 60, 0.35);
+  color: #e08d3c;
+  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.closeBtn:hover {
+  background: rgba(224, 141, 60, 0.25);
+}
+
+/* Top section */
+.offcanvasTop {
+  min-height: 28dvh;
+  padding: 1.5rem 0 1rem;
+}
+
+/* Divider — gold tint */
+.offcanvasDivider {
+  width: 100%;
+  border-color: rgba(224, 141, 60, 0.25);
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* Offcanvas links */
+.offcanvasNavList {
+  gap: 2px;
+}
+
+.offcanvasLink {
+  display: block;
+  text-align: center !important;
+  padding: 0.78rem 1rem !important;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+.offcanvasLink:hover {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.08) !important;
+  transform: translateX(4px);
+}
+
+.offcanvasActive {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.14) !important;
+}
+
+/* ── Responsive tweaks ─────────────────────── */
+@media (max-width: 991.98px) {
+  .navbar {
+    min-height: 64px;
+  }
+
+  .brandMain {
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+  }
+
+  .brandSub {
+    font-size: 0.62rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .navList {
+    gap: 4px;
+  }
+}

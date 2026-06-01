@@ -1,0 +1,314 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   carousel.module.css
+   Pamati Investment – Hero Carousel Styles
+   Navy #0a1428 | Gold #e08d3c | White text
+───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Outer wrapper ─────────────────────────────────────────────────────────── */
+.carousel {
+  position: relative;
+  border-radius: 0px;
+  overflow: hidden;
+  background: #0a1428;
+}
+
+/* Full-height inner track */
+.inner,
+.item {
+  height: 100%;
+}
+
+/* ── Image ─────────────────────────────────────────────────────────────────── */
+.image {
+  object-fit: fill;
+  object-position: center top;
+}
+
+/* ── Gradient overlay ──────────────────────────────────────────────────────── */
+/*
+  Navy-toned vignette from bottom — matches #0a1428 brand base
+*/
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 14, 28, 0.88) 0%,
+    rgba(10, 20, 40, 0.45) 45%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+/* Thin gold shimmer line at the bottom edge */
+.accentLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f0b070,
+    #e08d3c,
+    #b8641e
+  );
+  pointer-events: none;
+}
+
+/* ── Caption block ─────────────────────────────────────────────────────────── */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 40px 44px;
+  animation: captionIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes captionIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  margin-bottom: 12px;
+}
+
+.eyebrowDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e08d3c;
+  flex-shrink: 0;
+}
+
+/* Main headline */
+.title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Italic / accent portion of the headline */
+.title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #e08d3c;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Body description */
+.description {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.68;
+  max-width: 520px;
+  margin-bottom: 22px;
+}
+
+/* CTA button — gold filled */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e08d3c;
+  color: #0a1428;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 26px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    background 0.2s,
+    transform 0.18s;
+}
+
+.button:hover {
+  background: #f0a050;
+  color: #0a1428;
+  transform: scale(1.04);
+}
+
+/* ── Arrow controls ────────────────────────────────────────────────────────── */
+.control {
+  width: 48px !important;
+  height: 48px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  border-radius: 4px !important;
+  background: rgba(10, 20, 40, 0.5) !important;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(224, 141, 60, 0.35) !important;
+  transition:
+    background 0.2s,
+    transform 0.2s !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control:hover {
+  background: rgba(224, 141, 60, 0.3) !important;
+  border-color: rgba(224, 141, 60, 0.7) !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+/* Hide Bootstrap's default chevron icons */
+.control .carousel-control-prev-icon,
+.control .carousel-control-next-icon {
+  display: none;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  stroke: #e08d3c;
+}
+
+/* ── Line-style indicators (bottom-right) ──────────────────────────────────── */
+.indicators {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  left: unset !important;
+  margin: 0 !important;
+}
+
+.indicator {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    width 0.35s ease,
+    background 0.35s ease;
+}
+
+.indicator.indicatorActive,
+.indicator:global(.active) {
+  width: 44px;
+  background: #e08d3c;
+}
+
+/* ── Slide counter pill (top-left) ─────────────────────────────────────────── */
+.slideCounter {
+  position: absolute;
+  top: 22px;
+  left: 26px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(10, 20, 40, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(224, 141, 60, 0.35);
+  border-radius: 4px;
+  padding: 5px 14px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e08d3c;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.counterSep {
+  opacity: 0.45;
+  margin: 0 2px;
+}
+
+/* ── Decorative element (top-right) ────────────────────────────────────────── */
+.decoCross {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  z-index: 10;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.decoCross svg {
+  width: 44px;
+  height: 44px;
+}
+
+/* ── Responsive adjustments ────────────────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .caption {
+    padding: 24px 24px 36px;
+  }
+
+  .slideCounter {
+    top: 14px;
+    left: 16px;
+  }
+
+  .decoCross {
+    display: none;
+  }
+
+  .indicators {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .caption {
+    padding: 20px 18px 30px;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .button {
+    padding: 10px 18px;
+    font-size: 0.82rem;
+  }
+
+  .control {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
