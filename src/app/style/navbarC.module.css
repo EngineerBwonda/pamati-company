@@ -1,0 +1,468 @@
+/* ══════════════════════════════════════════════
+   Pamati Investment – Navbar B CSS Module
+   Navy #0a1428 | Gold #e08d3c | White text
+   + Commodities dropdown
+══════════════════════════════════════════════ */
+
+/* ── Navbar shell ──────────────────────────── */
+.navbar {
+  background: #0a1428;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  min-height: 80px;
+  border-bottom: 2px solid rgba(224, 141, 60, 0.25);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+}
+
+.navbar.scrolled {
+  background: #060e1c;
+  box-shadow: 0 6px 36px rgba(0, 0, 0, 0.55);
+  border-bottom-color: rgba(224, 141, 60, 0.45);
+}
+
+/* ── Brand mark ────────────────────────────── */
+.brand {
+  text-decoration: none !important;
+  padding: 6px 0;
+}
+.brandMark {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.brandMain {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #e08d3c;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.brandSub {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.brandSep {
+  color: #e08d3c;
+  opacity: 0.7;
+  margin: 0 6px;
+}
+.brandMarkCollapsed .brandMain {
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.brandMarkCollapsed .brandSub {
+  font-size: 0.68rem;
+  text-align: center;
+  white-space: normal;
+}
+
+/* ── Desktop nav links ─────────────────────── */
+.navList {
+  gap: 2px;
+}
+
+.navLink {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+  padding: 0.5rem 0.9rem !important;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82) !important;
+  border-radius: 5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    transform 0.2s ease !important;
+}
+
+.navLink:hover {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+.navLink.active {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.12) !important;
+}
+
+/* Gold animated underline */
+.underline {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: calc(100% - 18px);
+  height: 2px;
+  background: #e08d3c;
+  border-radius: 2px;
+  transition: transform 0.22s ease;
+}
+.navLink:hover .underline,
+.navLink.active .underline {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Chevron inside dropdown trigger */
+.dropChevron {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+/* ── Dropdown item wrapper ─────────────────── */
+.dropdownItem {
+  position: relative;
+}
+
+/* ── Dropdown panel ────────────────────────── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
+  background: #0a1428;
+  border: 1px solid rgba(224, 141, 60, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1050;
+  padding: 6px 0 0;
+}
+
+/* Gold top rule inside dropdown */
+.dropTopRule {
+  display: block;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #b8641e,
+    #e08d3c,
+    #f5b060,
+    #e08d3c,
+    #b8641e
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Individual dropdown link */
+.dropLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    padding-left 0.18s ease;
+  margin-top: 3px;
+}
+.dropLink:hover {
+  color: #e08d3c;
+  background: rgba(224, 141, 60, 0.08);
+  padding-left: 22px;
+}
+.dropLinkActive {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.12) !important;
+}
+
+/* Dot before each link */
+.dropLinkDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(224, 141, 60, 0.5);
+  flex-shrink: 0;
+  transition: background 0.18s;
+}
+.dropLink:hover .dropLinkDot {
+  background: #e08d3c;
+}
+
+/* Arrow icon */
+.dropLinkArrow {
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+  opacity: 0;
+  stroke: #e08d3c;
+  transition: opacity 0.18s ease;
+  flex-shrink: 0;
+}
+.dropLink:hover .dropLinkArrow {
+  opacity: 1;
+}
+
+/* View all row */
+.dropFooter {
+  border-top: 1px solid rgba(224, 141, 60, 0.15);
+  padding: 10px 18px;
+  margin-top: 4px;
+}
+.dropViewAll {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.dropViewAll:hover {
+  color: #f5b060;
+}
+
+/* ── Hamburger ─────────────────────────────── */
+.toggler {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px !important;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggler:hover {
+  background: rgba(224, 141, 60, 0.1) !important;
+}
+.togglerBar {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #e08d3c;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* ── Backdrop ──────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 14, 28, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1055;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Offcanvas drawer ──────────────────────── */
+.offcanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(300px, 85vw);
+  height: 100dvh;
+  background: #0a1428;
+  border-right: 2px solid rgba(224, 141, 60, 0.4);
+  box-shadow: 10px 0 48px rgba(0, 0, 0, 0.55);
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem 2rem;
+  transform: translateX(-110%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+.offcanvasOpen {
+  transform: translateX(0);
+}
+
+.closeBtn {
+  background: rgba(224, 141, 60, 0.12);
+  border: 1px solid rgba(224, 141, 60, 0.35);
+  color: #e08d3c;
+  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.closeBtn:hover {
+  background: rgba(224, 141, 60, 0.25);
+}
+
+.offcanvasTop {
+  min-height: 22dvh;
+  padding: 1.5rem 0 1rem;
+}
+
+.offcanvasDivider {
+  width: 100%;
+  border-color: rgba(224, 141, 60, 0.25);
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* Offcanvas nav list */
+.offcanvasNavList {
+  gap: 2px;
+  width: 100%;
+}
+
+/* Regular offcanvas link */
+.offcanvasLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.78rem 1rem !important;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease !important;
+  width: 100%;
+}
+.offcanvasLink:hover {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.08) !important;
+  transform: translateX(4px);
+}
+.offcanvasActive {
+  color: #e08d3c !important;
+  background: rgba(224, 141, 60, 0.14) !important;
+}
+
+/* Offcanvas dropdown toggle button */
+.offcanvasDropToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  gap: 8px;
+}
+.offcanvasChevron {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+/* Offcanvas sub-list */
+.offcanvasSubList {
+  list-style: none;
+  padding: 4px 0 6px;
+  margin: 0;
+  overflow: hidden;
+  background: rgba(224, 141, 60, 0.04);
+  border-radius: 6px;
+  border: 1px solid rgba(224, 141, 60, 0.12);
+  margin-bottom: 4px;
+}
+.offcanvasSubLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition:
+    color 0.18s,
+    background 0.18s;
+  border-radius: 4px;
+}
+.offcanvasSubLink:hover {
+  color: #e08d3c;
+  background: rgba(224, 141, 60, 0.07);
+}
+.offcanvasSubDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(224, 141, 60, 0.5);
+  flex-shrink: 0;
+}
+
+/* View all in offcanvas */
+.offcanvasSubViewAll {
+  display: block;
+  text-align: center;
+  padding: 8px 18px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e08d3c;
+  text-decoration: none;
+  border-top: 1px solid rgba(224, 141, 60, 0.12);
+  margin-top: 4px;
+  padding-top: 10px;
+  transition: color 0.18s;
+}
+.offcanvasSubViewAll:hover {
+  color: #f5b060;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 991.98px) {
+  .navbar {
+    min-height: 64px;
+  }
+  .brandMain {
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+  }
+  .brandSub {
+    font-size: 0.62rem;
+  }
+}
+@media (min-width: 992px) {
+  .navList {
+    gap: 4px;
+  }
+}
