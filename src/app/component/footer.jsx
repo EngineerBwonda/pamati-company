@@ -16,7 +16,7 @@ const quickLinks = [
 
 const commodities = [
   { label: "Nickel", href: "../pages/nickel" },
-  { label: "Copper", href: "../pages/copperpage" },
+  // { label: "Copper", href: "../pages/copperpage" },
   { label: "Tin", href: "../pages/tinpage" },
   { label: "Coffee & Tea", href: "#" },
   { label: "Soft Commodities", href: "#" },
