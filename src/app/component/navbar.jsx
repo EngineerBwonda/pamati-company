@@ -12,14 +12,14 @@ const commodityLinks = [
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
+  { label: "Services", href: "../pages/servicepage" },
   {
     label: "Commodities",
     href: "../pages",
     dropdown: commodityLinks,
   },
-  { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "../pages/aboutUs" },
+  { label: "Contact", href: "../pages/contactpage" },
 ];
 
 /* ── Dropdown variants ─────────────────────── */
